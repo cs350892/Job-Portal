@@ -4,34 +4,34 @@ import validator from "validator";
 const applicationSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: [true, "Please enter your Name!"],
-    minLength: [3, "Name must contain at least 3 Characters!"],
-    maxLength: [30, "Name cannot exceed 30 Characters!"],
+    required: [true, "Name required"],
+    minLength: [3, "Min 3 chars"],
+    maxLength: [30, "Max 30 chars"],
   },
   email: {
     type: String,
-    required: [true, "Please enter your Email!"],
-    validate: [validator.isEmail, "Please provide a valid Email!"],
+    required: [true, "Email required"],
+    validate: [validator.isEmail, "Invalid email"],
   },
   coverLetter: {
     type: String,
-    required: [true, "Please provide a cover letter!"],
+    required: [true, "Cover letter required"],
   },
   phone: {
     type: Number,
-    required: [true, "Please enter your Phone Number!"],
+    required: [true, "Phone required"],
   },
   address: {
     type: String,
-    required: [true, "Please enter your Address!"],
+    required: [true, "Address required"],
   },
   resume: {
     public_id: {
-      type: String, 
+      type: String,
       required: true,
     },
     url: {
-      type: String, 
+      type: String,
       required: true,
     },
   },

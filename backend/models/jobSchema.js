@@ -3,48 +3,36 @@ import mongoose from "mongoose";
 const jobSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: [true, "Please provide a title."],
-    minLength: [3, "Title must contain at least 3 Characters!"],
-    maxLength: [30, "Title cannot exceed 30 Characters!"],
+    required: [true, "Title required"],
+    minLength: [3, "Min 3 chars"],
+    maxLength: [30, "Max 30 chars"],
   },
   description: {
     type: String,
-    required: [true, "Please provide decription."],
-    minLength: [10, "Description must contain at least 10 Characters!"],
-    maxLength: [500, "Description cannot exceed 500 Characters!"],
+    required: [true, "Description required"],
+    minLength: [10, "Min 10 chars"],
+    maxLength: [500, "Max 500 chars"],
   },
   category: {
     type: String,
-    required: [true, "Please provide a category."],
+    required: [true, "Category required"],
   },
   country: {
     type: String,
-    required: [true, "Please provide a country name."],
+    required: [true, "Country required"],
   },
   city: {
     type: String,
-    required: [true, "Please provide a city name."],
+    required: [true, "City required"],
   },
   location: {
     type: String,
-    required: [true, "Please provide location."],
-    minLength: [20, "Location must contian at least 20 characters!"],
+    required: [true, "Location required"],
+    minLength: [20, "Min 20 chars"],
   },
-  fixedSalary: {
-    type: Number,
-    minLength: [4, "Salary must contain at least 4 digits"],
-    maxLength: [9, "Salary cannot exceed 9 digits"],
-  },
-  salaryFrom: {
-    type: Number,
-    minLength: [4, "Salary must contain at least 4 digits"],
-    maxLength: [9, "Salary cannot exceed 9 digits"],
-  },
-  salaryTo: {
-    type: Number,
-    minLength: [4, "Salary must contain at least 4 digits"],
-    maxLength: [9, "Salary cannot exceed 9 digits"],
-  },
+  fixedSalary: Number,
+  salaryFrom: Number,
+  salaryTo: Number,
   expired: {
     type: Boolean,
     default: false,
